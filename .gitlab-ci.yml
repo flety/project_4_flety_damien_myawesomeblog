@@ -1,13 +1,20 @@
 stages:
+  - quality
   - build
   - deploy
+
+quality_job:
+  stage: quality
+  image: python:latest
+  script:
+    - pip install -r requirements.txt
+    - pylint pelicanconf.py publishconf.py
 
 build_job:
   stage: build
   image: python:latest
   script:
-    - pip install pelican
-    - pip install markdown
+    - pip install -r requirements.txt
     - make html
 
 deploy_job:
