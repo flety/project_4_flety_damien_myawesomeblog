@@ -1,0 +1,4 @@
+# Ignore output dir
+output/
+# Ignore compiled python files
+*.pyc
