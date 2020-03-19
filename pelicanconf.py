@@ -1,6 +1,9 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- #
+"""This is the configuration file of the blog """
 from __future__ import unicode_literals
+
+# pylint: disable=unused-wildcard-import
+# -*- coding: utf-8 -*- #
 
 AUTHOR = u'flety'
 SITENAME = u'myawesomeblog'
@@ -20,7 +23,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('My real blog that I don\'t maintain' , 'https://damfle.github.io/'),
+LINKS = (('My real blog that I don\'t maintain', 'https://damfle.github.io/'),
          ('Test repo', 'https://gitlab.com/flety1/myawesomeblog'),
          ('This but built htmls', 'https://github.com/flety/flety.github.io'),)
 
