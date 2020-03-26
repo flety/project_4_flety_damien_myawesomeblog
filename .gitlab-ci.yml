@@ -16,11 +16,21 @@ build_job:
   script:
     - pip install -r requirements.txt
     - make html
+  artifacts:
+    paths:
+      - output/
+
 
 deploy_job:
   stage: deploy
   image: python:latest
   script:
-    - pip install -r requirements.txt
-    - make publish
+    - git clone https://github.com/flety/flety.github.io.git /tmp/flety.github.io
+    - cp -rfp output/* /tmp/flety.github.io
+    - cd /tmp/flety.github.io
+    - git add -A
+    - git commit -m "[Deploy] Deploy $(date)"
   when: manual
+  artifacts:
+    paths:
+      - output/
