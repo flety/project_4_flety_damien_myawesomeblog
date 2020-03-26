@@ -32,7 +32,7 @@ deploy_job:
     - git config --local user.name $GITHUB_USER_MAIL
     - git add -A
     - git commit -m "[Deploy] Deploy $(date)"
-    - git push -u 'https://$GITHUB_USER_NAME:$GITHUB_USER_PASSWORD@github.com/flety/flety.github.io.git'
+    - git push -u "https://$GITHUB_USER_NAME:$GITHUB_USER_PASSWORD@github.com/flety/flety.github.io.git"
   when: manual
   artifacts:
     paths:
