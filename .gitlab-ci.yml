@@ -22,5 +22,5 @@ deploy_job:
   image: python:latest
   script:
     - pip install -r requirements.txt
-    - make publish github
+    - make publish
   when: manual
