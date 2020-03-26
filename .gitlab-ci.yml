@@ -28,8 +28,11 @@ deploy_job:
     - git clone https://github.com/flety/flety.github.io.git /tmp/flety.github.io
     - cp -rfp output/* /tmp/flety.github.io
     - cd /tmp/flety.github.io
+    - git config --local user.email $GITHUB_USER_NAME
+    - git config --local user.name $GITHUB_USER_MAIL
     - git add -A
     - git commit -m "[Deploy] Deploy $(date)"
+    - git push -u 'https://$GITHUB_USER_NAME:$GITHUB_USER_PASSWORD@github.com/flety/flety.github.io.git'
   when: manual
   artifacts:
     paths:
