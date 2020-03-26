@@ -21,4 +21,6 @@ deploy_job:
   stage: deploy
   image: python:latest
   script:
-    - echo "hi"
+    - pip install -r requirements.txt
+    - make publish github
+  when: manual
